@@ -18,9 +18,6 @@ dependencies = [
 [project.scripts]
 pedumper = "pedumper.cli:main"
 
-#[tool.setuptools]
-#package-dir = { "" = "src" }
-
 [tool.setuptools.packages.find]
 exclude = ["build", "tests"]
 
