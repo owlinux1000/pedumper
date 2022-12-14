@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pedumper"
+description = "Dumper can easily extract PE files in the memory of the target process"
+readme = "docs/README.md"
+license = {file = "LICENSE"}
+version = "1.0.0"
+authors = [ 
+    { name = "Chihiro Hasegawa", email = "encry1024@gmail.com" },
+]
+dependencies = [
+    "pefile"
+]
+
+[project.scripts]
+pedumper = "pedumper.cli:main"
+
+#[tool.setuptools]
+#package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+exclude = ["build", "tests"]
+
