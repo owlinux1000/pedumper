@@ -11,7 +11,7 @@ pip install pedumper
 ## How to use
 
 ```cmd
-pedumper -p 24532 
+C:\Users\user\Desktop>pedumper -p 24532
 [!] Found a PE file in the target memory
 [*] Address     : 0x133f8e80000
 [*] Region      : 0x133f8e80000 - 0x133f8eb7000
