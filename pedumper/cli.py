@@ -78,9 +78,7 @@ def main():
             protect = [k for k, v in PROTECT.items() if v == mbi.Protect][0]
             print("[!] Found a PE file in the target memory")
             print(f"[*] Address\t: {hex(prev_offset + mz_offset)}")
-            print(
-                f"[*] Region\t: {hex(prev_offset)} - {hex(prev_offset + mbi.RegionSize)}"
-            )
+            print(f"[*] Region\t: {hex(prev_offset)} - {hex(prev_offset + mbi.RegionSize)}")
             print(f"[*] Protect\t: {hex(mbi.Protect)} ({protect})")
             print(f"[*] Type\t: {hex(mbi.Type)} ({TYPE[mbi.Type]})")
             print(f"[*] State\t: {hex(mbi.State)} ({STATE[mbi.State]})")
