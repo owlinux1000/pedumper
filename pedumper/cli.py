@@ -18,7 +18,8 @@ PROTECT = {
     "PAGE_EXECUTE_READ": 0x20,
     "PAGE_EXECUTE_READWRITE": 0x40,
 }
-PROCESS_ALL_ACCESS = 0x1F0FFF
+PROCESS_VM_READ = 0x10
+PROCESS_QUERY_INFORMATION = 0x400
 
 
 class MEMORY_BASIC_INFORMATION(ctypes.Structure):
@@ -85,7 +86,11 @@ def init_args() -> argparse.ArgumentParser:
 
 
 def open_process(pid: int) -> int:
-    hProcess = ctypes.windll.kernel32.OpenProcess(PROCESS_ALL_ACCESS, False, pid)
+    hProcess = ctypes.windll.kernel32.OpenProcess(
+        PROCESS_VM_READ | PROCESS_QUERY_INFORMATION,
+        False,
+        pid
+    )
     if hProcess == 0:
         print(f"Failed to open the process: {pid}")
         sys.exit(1)
