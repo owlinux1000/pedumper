@@ -1,6 +1,6 @@
 # pedumper
 
-pedumper can easily dump PE files within memory. Currently, pedumper supports only amd64.
+pedumper can easily dump PE files within memory.
 
 ## Installation
 
