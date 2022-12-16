@@ -1,7 +1,7 @@
 import ctypes
 from ctypes.wintypes import *
 
-from defines import *
+from pedumper.defines import *
 
 PROCESS_VM_READ = 0x10
 PROCESS_QUERY_INFORMATION = 0x400

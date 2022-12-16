@@ -1,43 +1,25 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "pedumper"
+version = "1.3.0"
 description = "Dumper can easily extract PE files in the memory of the target process"
+authors = ["owlinux1000 <encry1024@gmail.com>"]
+license = "MIT"
 readme = "docs/README.md"
-license = {file = "LICENSE"}
-version = "1.2.0"
-authors = [ 
-    { name = "Chihiro Hasegawa", email = "encry1024@gmail.com" },
-]
-dependencies = [
-    "pefile"
-]
 
-[project.scripts]
+[tool.poetry.dependencies]
+python = "^3.11"
+pefile = "^2022.5.30"
+
+[tool.poetry.group.dev.dependencies]
+pyproject-flake8 = "^6.0.0"
+flake8 = "^6.0.0"
+black = "^22.12.0"
+isort = "^5.11.2"
+
+[tool.poetry.scripts]
 pedumper = "pedumper.cli:main"
 
-[project.optional-dependencies]
-dev = [
-    "pyproject-flake8",
-    "flake8",
-    "black",
-    "isort"
-]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.setuptools.packages.find]
-exclude = ["build", "tests"]
-
-[tool.black]
-line-length = 100
-
-[tool.isort]
-profile = "black"
-
-[tool.flake8]
-extend-ignore = [
-    "F403",
-    "F405"
-]
-max-line-length = 100

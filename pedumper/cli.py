@@ -2,8 +2,8 @@ import argparse
 import pathlib
 
 import pefile
-from defines import *
-from winapi import *
+from pedumper.defines import *
+from pedumper.winapi import *
 
 
 def init_args() -> argparse.ArgumentParser:
