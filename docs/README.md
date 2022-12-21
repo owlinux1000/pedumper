@@ -1,4 +1,5 @@
 # pedumper
+[![Downloads](https://pepy.tech/badge/pedumper)](https://pepy.tech/project/pedumper)
 
 pedumper can easily dump PE files within memory.
 
